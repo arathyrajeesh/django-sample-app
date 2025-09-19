@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends "master.html" %}
+    {% block title %}
+    My all members - List of all members
+    {% endblock %}</head>
+<body>
+    {% block content %}
+    <a href="/">HOME</a>
+    <h1>Members</h1>
+    <ul>
+        {% for x in person %}
+            <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
