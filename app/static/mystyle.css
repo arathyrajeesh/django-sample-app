@@ -3,6 +3,11 @@ body {
     font: 600 18px 'Source Sans Pro', sans-serif;
     letter-spacing: 0.64px;
     color: #585d74;
+    
+}
+.ex{
+    background-image: url('{% static "image/images.jpeg" %}');
+    background-size: cover;
 }
 .topnav {
     background-color:#150363;

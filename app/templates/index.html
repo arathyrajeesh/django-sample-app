@@ -1,23 +1,30 @@
 {% extends "master.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% block title %}
+{% block title %}
     My all members - List of all members
-    {% endblock %}</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <div class='topnav'>
-        {% block content %}
         <a href="/">HOME</a>
         <h1>Members</h1>
     </div>
+
     <ul>
         {% for x in person %}
-            <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+        <li>
+            {{ x.firstname }} {{ x.lastname }}
+            |
+            <a href="{% url 'details' x.id %}">View</a> |
+            <a href="{% url 'update' x.id %}"><button>Edit</button></a> |
+            <a href="{% url 'delete' x.id %}" onclick="return confirm('Are you sure?')"><button>Delete</button></a>
+        </li>
+        
         {% endfor %}
     </ul>
-    {% endblock %}
-</body>
-</html>
+
+    <a href="{% url 'add' %}">
+        <button>Add Member</button>
+    </a>
+{% endblock %}

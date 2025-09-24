@@ -1,11 +1,13 @@
 <html>
+    
     {% extends "master.html" %}
-
+    {% load static%}
     {% block title %}
         My Club
     {% endblock %}
 <body>
     {% block content %}
+    <img src="{% static 'image/images.jpeg' %}">
     <div class="main">
         <h1>My Tennis Club</h1>
 
