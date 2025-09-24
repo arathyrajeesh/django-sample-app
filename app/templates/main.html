@@ -1,13 +1,11 @@
-<html>
+
+{% extends "master.html" %}
+{% load static%}
+{% block title %}
+    My Club
+{% endblock %}
     
-    {% extends "master.html" %}
-    {% load static%}
-    {% block title %}
-        My Club
-    {% endblock %}
-<body>
-    {% block content %}
-    <img src="{% static 'image/images.jpeg' %}">
+{% block content %}
     <div class="main">
         <h1>My Tennis Club</h1>
 
@@ -16,5 +14,3 @@
         <p>Check out all our <a href="/home">members</a></p>
     </div>
     {% endblock %}
-</body>
-</html>

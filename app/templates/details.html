@@ -2,11 +2,10 @@
 
 {% load static %}
 
-<html>
-    {% block title %}
-    Details about {{ persons.firstname }} {{ persons.lastname }}
-    {% endblock %}
-<body>
+{% block title %}
+Details about {{ persons.firstname }} {{ persons.lastname }}
+{% endblock %}
+
     <div class="mycard">
     {% block content %}
         <h1>{{ persons.firstname }} {{ persons.lastname }}</h1>
@@ -19,5 +18,3 @@
         <p>Back to <a href="/home">Members</a></p>
     {% endblock %}
     </div>
-</body>
-</html>

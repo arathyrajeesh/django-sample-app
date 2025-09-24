@@ -2,29 +2,25 @@
 {% load static %}
 
 {% block title %}
-    My all members - List of all members
+My all members - List of all members
 {% endblock %}
 
 {% block content %}
-    <div class='topnav'>
-        <a href="/">HOME</a>
-        <h1>Members</h1>
-    </div>
+<div class="topnav">
+    <a href="/">HOME</a>
+    <h1>Members</h1>
+</div>
 
-    <ul>
-        {% for x in person %}
-        <li>
-            {{ x.firstname }} {{ x.lastname }}
-            |
-            <a href="{% url 'details' x.id %}">View</a> |
-            <a href="{% url 'update' x.id %}"><button>Edit</button></a> |
-            <a href="{% url 'delete' x.id %}" onclick="return confirm('Are you sure?')"><button>Delete</button></a>
-        </li>
-        
-        {% endfor %}
-    </ul>
+<ul>
+    {% for x in person %}
+    <li>
+        {{ x.firstname }} {{ x.lastname }}
+        <a href="{% url 'details' x.id %}" class="btn view">View</a>
+        <a href="{% url 'update' x.id %}" class="btn edit">Edit</a>
+        <a href="{% url 'delete' x.id %}" class="btn delete" onclick="return confirm('Are you sure?')">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
 
-    <a href="{% url 'add' %}">
-        <button>Add Member</button>
-    </a>
+<a href="{% url 'add' %}" class="btn add">Add Member</a>
 {% endblock %}
